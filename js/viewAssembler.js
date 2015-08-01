@@ -88,5 +88,3 @@ ViewAssembler.prototype.quizesView = function () {
     //el.find( "#submitButton" ).on( this.CLICK_EVENT, onSearchButtonClick );
     return el;
 }
-20741082
-Electronic business card
