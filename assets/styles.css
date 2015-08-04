@@ -206,7 +206,11 @@ body {
     background-repeat:no-repeat;
 }
 
-
+#loadingView {
+    background-image:url('graphics/wheat_bg_nocolor.png');
+    background-position: bottom center;
+    background-repeat:no-repeat;
+}
 
 @media only screen and (min-width:760px) {
     #defaultView {
@@ -214,7 +218,31 @@ body {
     }
 }
 
-#videosView h2,
+
+#videosView #videosHeader {
+    display:block;
+    padding-left:110px;
+    min-height: 45px;
+}
+
+#videosView #refreshButton {
+    position:absolute;
+    top:20px;
+    left:15px;
+    width:40px;
+    display:block;
+    padding-left:110px;
+    min-height: 45px;
+    background-image:url('graphics/refresh.png');
+    background-position: 50px top;
+    background-repeat:no-repeat;
+}
+
+#videosView h2{
+    -webkit-margin-after: 0em;
+    padding:0em;
+}
+
 #defaultView h2 {
     display:block;
     padding:0em;
@@ -266,6 +294,12 @@ body {
 
 
 #findMarketsNearMeView {
+}
+#videosView .videoItem {
+    padding-left:75px;
+    background-image:url('graphics/info.png');
+    background-position: 10px center;
+    background-repeat:no-repeat;
 }
 
 #videosView {

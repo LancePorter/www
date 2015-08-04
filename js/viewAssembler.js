@@ -67,11 +67,17 @@ ViewAssembler.prototype.videosView = function() {
     var el = $( templates.videosViewTemplate );
     var $videosBeginning = el.find("#videosBeginning");
     var cars = 'Saab,Volvo,BMW,GMC,Nissan,Ford'.split(',');
+    videosCount = window.localStorage.getItem('videosCount');
+    if (! videosCount){
+        videosCount = '0';
+        window.localStorage.setItem('videosCount', videosCount)
+    }
     for (var c in cars) {
         //$videosBeginning.append($("<div>"));
         //$videosBeginning.append($("<a id='{0}'></a>").text(cars[c]));
         //$videosBeginning.append($("</div>"));
-        $videosBeginning.append($("<div><a id=" + cars[c] + " href='#'>" + cars[c] + "</div>"));
+        var item =
+        $videosBeginning.append("<div><a id=" + cars[c] + " class='videoItem' href='#'>" + cars[c] + "</a></div>");
     }
     return el;
 }

@@ -31,8 +31,8 @@ var m = Math,
 	})(),
 	cancelFrame = (function () {
 	    return window.cancelRequestAnimationFrame
-			|| window.webkitCancelAnimationFrame
-			|| window.webkitCancelRequestAnimationFrame
+			|| window.CancelAnimationFrame
+			|| window.CancelRequestAnimationFrame
 			|| window.mozCancelRequestAnimationFrame
 			|| window.oCancelRequestAnimationFrame
 			|| window.msCancelRequestAnimationFrame
