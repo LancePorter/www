@@ -221,20 +221,20 @@ body {
 
 #videosView #videosHeader {
     display:block;
-    padding-left:110px;
+    padding-left:60px;
     min-height: 45px;
 }
 
 #videosView #refreshButton {
     position:absolute;
     top:20px;
-    left:15px;
-    width:40px;
+    left:20px;
+    width:48px;
     display:block;
-    padding-left:110px;
-    min-height: 45px;
+    padding-left:0px;
+    min-height: 48px;
     background-image:url('graphics/refresh.png');
-    background-position: 50px top;
+    background-position: left top;
     background-repeat:no-repeat;
 }
 
@@ -253,6 +253,15 @@ body {
     display:block;
     padding:1em;
     padding-top:0em;
+}
+#videosView input[type='submit']{
+    font-size: 1em;
+}
+
+#videosView input[type='text']{
+    width: 100%;
+    font-size: 1em;
+
 }
 
 #videosView a,

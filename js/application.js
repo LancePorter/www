@@ -1,7 +1,7 @@
 
 
 var viewAssembler = new ViewAssembler();
-
+var videosList = [];
 $(document).ready( function(){
     loadTemplates( setupDefaultView );
 } );
@@ -25,7 +25,7 @@ function setupDefaultView() {
 function onVideosViewClick( event ) {
     var view = { title: "Videos",
              backLabel: (isTablet() ? "Back" : " "),
-             view: viewAssembler.videosView()
+             view: viewAssembler.videosView(videosList)
            };
     window.viewNavigator.pushView( view );
     event.stopPropagation();
@@ -51,9 +51,10 @@ function onVideosViewClick( event ) {
         , hwaccel: false // Whether to use hardware acceleration
         , position: 'absolute' // Element positioning
     };
-    var target = document.getElementById('refreshButton');
-    target.style.backgroundImage = "url('')";
-    var spinner = new Spinner(opts).spin(target);
+    //var target = document.getElementById('refreshButton');
+    //target.style.backgroundImage = "url('')";
+    //var spinner = new Spinner(opts).spin(target);
+    //$.get(URL,callback);
     return false;
 }
 

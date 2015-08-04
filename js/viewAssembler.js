@@ -63,21 +63,21 @@ ViewAssembler.prototype.defaultView = function() {
     return el;
 }
 
-ViewAssembler.prototype.videosView = function() {
+ViewAssembler.prototype.videosView = function(videosList) {
     var el = $( templates.videosViewTemplate );
     var $videosBeginning = el.find("#videosBeginning");
     var cars = 'Saab,Volvo,BMW,GMC,Nissan,Ford'.split(',');
     videosCount = window.localStorage.getItem('videosCount');
-    if (! videosCount){
+    if (! videosList.length){
         videosCount = '0';
-        window.localStorage.setItem('videosCount', videosCount)
+        $videosBeginning.append("<a id=" + "None" + " class='videoItem' href='#'>" + "List is Empty" + "</a><div></div>");
     }
-    for (var c in cars) {
+    for (var item in videosList) {
         //$videosBeginning.append($("<div>"));
         //$videosBeginning.append($("<a id='{0}'></a>").text(cars[c]));
         //$videosBeginning.append($("</div>"));
-        var item =
-        $videosBeginning.append("<div><a id=" + cars[c] + " class='videoItem' href='#'>" + cars[c] + "</a></div>");
+        if(item['videoUID'] && item['videoTitle'])
+        $videosBeginning.append("<div><a id=" + item['videoUID'] + " class='videoItem' href='#'>" + item['videoTitle'] + "</a></div>");
     }
     return el;
 }
