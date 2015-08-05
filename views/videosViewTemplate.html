@@ -1,14 +1,13 @@
 
 <div id="videosView">
     <div id="videosHeader">
-        <div id="refreshButton"></div>
+        <div style="cursor: pointer" id="refreshButton" onclick="refreshVideosList()"></div>
         <h2>Available Now:</h2>
-        Last update: <i id="lastUpdate">Updating</i>
+        Choose a video to watch... <i id="lastUpdate"></i>
     </div>
     <dummy id="videosBeginning">
     </dummy>
     <a>
-    <form>
         <h3 align="center">Add New Video</h3>
         Video Title:<br>
         <input class='text' type="text" name="videoTitle">
@@ -17,8 +16,7 @@
         <input class='text' type="text" name="videoUrl" value="https://www.youtube.com/watch?v=">
         <br><br>
         <div style="text-align:center">
-            <input type="submit" value="Add Video">
+            <b class="button" id="addVideoButton" onclick="onAddVideoClick()" href="#">Add Video</b>
         </div>
-    </form>
     </a>
 </div>

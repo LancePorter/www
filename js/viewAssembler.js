@@ -51,8 +51,7 @@ function isTablet() {
 
 function ViewAssembler() {
     this.touchSupported = 'ontouchstart' in window;
-    //this.CLICK_EVENT = this.touchSupported ? 'touchend' : 'click';
-    this.CLICK_EVENT = 'click';
+    this.CLICK_EVENT = this.touchSupported ? 'touchend' : 'click';
     return this;
 }
 
@@ -60,6 +59,7 @@ ViewAssembler.prototype.defaultView = function() {
     var el = $( templates.defaultViewTemplate );
     el.find("#quiz").on( this.CLICK_EVENT, onQuizesViewClick );
     el.find("#video").on( this.CLICK_EVENT, onVideosViewClick );
+    var temp = el.find("#video");
     return el;
 }
 
@@ -72,13 +72,14 @@ ViewAssembler.prototype.videosView = function(videosList) {
         videosCount = '0';
         $videosBeginning.append("<a id=" + "None" + " class='videoItem' href='#'>" + "List is Empty" + "</a><div></div>");
     }
-    for (var item in videosList) {
-        //$videosBeginning.append($("<div>"));
-        //$videosBeginning.append($("<a id='{0}'></a>").text(cars[c]));
-        //$videosBeginning.append($("</div>"));
-        if(item['videoUID'] && item['videoTitle'])
-        $videosBeginning.append("<div><a id=" + item['videoUID'] + " class='videoItem' href='#'>" + item['videoTitle'] + "</a></div>");
+    for(i = 0; i<videosList.length; i++) {
+        if(videosList[i]['pubDate'] && videosList[i]['videoTitle'])
+        $videosBeginning.append("<a id='" + videosList[i]['pubDate'] + "' class='videoItem' href='#'>" + videosList[i]['videoTitle'] + "</a><div></div>");
     }
+
+    //el.find("#refreshButton").on( this.CLICK_EVENT, refreshVideosList );
+
+    //el.find("#addVideoButton").on( this.CLICK_EVENT, onAddVideoClick );
     return el;
 }
 

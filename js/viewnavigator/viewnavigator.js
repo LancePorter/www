@@ -46,8 +46,8 @@ var ViewNavigator = function( target, backLinkCSS, bindToWindow ) {
 ViewNavigator.prototype.replaceView = function( viewDescriptor ) {
 	if (this.animating)
 		return;
-	viewDescriptor.animation = "pushEffect"
-	
+	viewDescriptor.animation = "pushEffect";
+
 	//this is a hack to mimic behavior of pushView, then pop off the "current" from the history
 	this.history.push( viewDescriptor );
 	this.updateView( viewDescriptor );
@@ -59,7 +59,7 @@ ViewNavigator.prototype.replaceView = function( viewDescriptor ) {
 ViewNavigator.prototype.pushView = function( viewDescriptor ) {
 	if (this.animating)
 		return;
-	viewDescriptor.animation = "pushEffect"
+	viewDescriptor.animation = "pushEffect";
 	this.history.push( viewDescriptor );
 	this.updateView( viewDescriptor );
 }
