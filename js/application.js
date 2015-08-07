@@ -28,7 +28,7 @@ function onVideosViewClick( event ) {
     var view = { title: "Videos",
             backLabel: (isTablet() ? "Back" : " "),
             view: viewAssembler.videosView(videosList),
-            showCallback: refreshVideosList
+//            showCallback: refreshVideosList
            };
     window.viewNavigator.pushView( view );
     event.stopPropagation();

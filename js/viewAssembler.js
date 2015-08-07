@@ -82,7 +82,13 @@ ViewAssembler.prototype.videosView = function(videosList) {
 //    videosCount = window.localStorage.getItem('videosCount');
     if (! videosList.length){
  //       videosCount = '0';
-        $videosBeginning.append("<a id=" + "None" + " class='videoItem' href='##'>" + "List is Empty" + "</a><div></div>");
+        $videosBeginning.append(
+            $("<a class='videoItem' href='##'></a>").
+                attr("id", "None").
+                html("List is empty").on(this.CLICK_EVENT, function(){
+                    onVideoSelect(null);
+                })
+        ).append($("<div></div>"));
     }
     for(i = 0; i<videosList.length; i++) {
         if(videosList[i]['pubDate'] && videosList[i]['videoTitle']) {
