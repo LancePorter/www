@@ -76,7 +76,7 @@ ViewNavigator.prototype.popView = function() {
 		
 	this.history.pop();	
 	var viewDescriptor = this.history[ this.history.length-1 ];
-	viewDescriptor.animation = "popEffect"
+	viewDescriptor.animation = "popEffect";
 	this.updateView( viewDescriptor );
 }
 
@@ -343,7 +343,6 @@ ViewNavigator.prototype.guid = function() {
 
 
 /*  PHONEGAP INTEGRATION */
-/*
 //android+phonegap specific back button support - will only work if phonegap is used on android (www.phonegap.com)
 if ( typeof PhoneGap != 'undefined' ) { 
 	document.addEventListener("deviceready", onDeviceReady, false);
@@ -360,4 +359,3 @@ function onBackKey( event ) {
 		window.backKeyViewNavigators[x].popView();
 	}
 }
-*/

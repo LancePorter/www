@@ -26,13 +26,22 @@ function setupDefaultView() {
 
 function onVideosViewClick( event ) {
     var view = { title: "Videos",
-             backLabel: (isTablet() ? "Back" : " "),
-             view: viewAssembler.videosView(videosList)
+            backLabel: (isTablet() ? "Back" : " "),
+            view: viewAssembler.videosView(videosList),
+            showCallback: refreshVideosList
            };
     window.viewNavigator.pushView( view );
     event.stopPropagation();
 
-    return refreshVideosList();
+    return false;
+}
+function onVideoSelect(videoItem){
+    var view = { title: "Watch Video",
+        backLabel: (isTablet() ? "Back" : " "),
+        view: viewAssembler.watchView(videoItem)
+    };
+    window.viewNavigator.pushView( view );
+    return false;
 }
 
 function refreshVideosList() {
@@ -69,14 +78,14 @@ function refreshVideosList() {
 
 function updateVideosView( data, status ) {
     videosList = data;
-    var view = viewAssembler.videosView(videosList);
+    var $view = viewAssembler.videosView(videosList);
     setTimeout(function () {
-        $('#videosView').html(view.html());
+        $('#videosView').replaceWith($view);
         viewNavigator.resetScroller();
     } , 600 );
 }
 
-function onAddVideoClick(event) {
+function onAddVideoClick() {
     $.ajax({
             type: 'POST',
             data: {
