@@ -16,6 +16,7 @@ function setupDefaultView() {
     var defaultView = { title: "Welcome!", 
     view:  bodyView
     };
+
     
     //Setup the ViewNavigator
     window.viewNavigator = new ViewNavigator( 'body' );	
