@@ -4,6 +4,7 @@ var templates = {
     defaultViewTemplate:"views/defaultViewTemplate.html",
     quizesViewTemplate:"views/quizesViewTemplate.html",
     watchViewTemplate:"views/watchViewTemplate.html",
+    createQuizView:"views/createQuizViewTemplate.html",
     loaded: 0,
     requested: 0
 };
@@ -45,9 +46,7 @@ function onTemplateLoaded(template, key) {
 
 
 function isTablet() {
-    var _w = $(window).width();
-    var _h = $(window).height();
-    return (Math.min(_w,_h) >= 600);
+    return ($(window).width() >= 600);
 }
 
 function ViewAssembler() {
@@ -66,6 +65,15 @@ ViewAssembler.prototype.watchView = function(videoItem) {
     //var temp = el.find("#video");
     return el;
 }
+
+ViewAssembler.prototype.createQuizView = function() {
+    var el = $( templates.createQuizView );
+    el.find("#quizDescription").show(function(){
+        $('#quizDescription').elastic();
+    });
+    return el;
+}
+
 
 ViewAssembler.prototype.defaultView = function() {
     var el = $( templates.defaultViewTemplate );
@@ -110,7 +118,7 @@ ViewAssembler.prototype.videosView = function(videosList) {
 ViewAssembler.prototype.quizesView = function () {
     var el = $( templates.quizesViewTemplate );
     var $state = el.find( "#Choice" );
-    
+    el.find("#addQuizButton").on(this.CLICK_EVENT, onAddQuizButton);
     var states = ["Excellent","Good","Normal","Bad", "terrible"];
     for ( var i in states ) {
         $state.append($("<option></option>").text(states[i])); 

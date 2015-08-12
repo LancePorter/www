@@ -17,7 +17,7 @@ function setupDefaultView() {
     view:  bodyView
     };
 
-    
+
     //Setup the ViewNavigator
     window.viewNavigator = new ViewNavigator( 'body' );	
     window.viewNavigator.pushView( defaultView );
@@ -114,7 +114,16 @@ function onQuizesViewClick( event ) {
     return false;
 }
 
-			
+function onAddQuizButton(event){
+    var view = { title: "Create Quiz",
+        backLabel: (isTablet() ? "Back" : " "),
+        view: viewAssembler.createQuizView(),
+    };
+    window.viewNavigator.pushView( view );
+    event.stopPropagation();
+    return false;
+}
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {

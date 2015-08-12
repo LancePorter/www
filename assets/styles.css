@@ -107,17 +107,13 @@ body {
     position:absolute;
     top:5px;
     left:5px;
-    width:40px;
-    color: rgba(0,0,0,0);
+    width:37px;
     height:35px;
-    box-shadow: 0 0 0 0;
-    background: #DEDEDE;
-    border:1px solid #999;
     padding:0px;
-    border-radius:0px;
     background-image:url('graphics/back_arrow.png');
     background-position: 3px center;
     background-repeat:no-repeat;
+    color: #333333;
 }
 
 @media only screen and (min-width:760px) {
@@ -173,12 +169,11 @@ body {
 }
 
 .button {
-    padding:.5em;
+    padding:.6em;
     cursor:pointer;
     border:1px solid #999;
-    background-color: #AAA;
-    color: white;
     text-decoration:none;
+    background-color: #cccccc;
 }
 
 .button:active {
@@ -256,6 +251,10 @@ body {
 }
 #videosView #addVideoButton{
     font-size: 1em;
+    padding-left:38px;
+    background-image:url('graphics/add_small.png');
+    background-position: 3px center;
+    background-repeat:no-repeat;
 }
 
 #videosView input[type='text']{
@@ -275,7 +274,54 @@ body {
     font-size:1em;
     background:rgba(230,230,230,0.85);
 }
+#quizesView #addQuizButton {
+    height:100%;
+    display:block;
+    border:1px solid #999;
+    padding:1.25em;
+    text-decoration: none;
+    font-size:1.1em;
+    padding-left: 68px;
+    background-image:url('graphics/add.png');
+    background-position: 10px center;
+    background-repeat:no-repeat;
+}
 
+#addQuestionButton {
+    height: 52px;
+    text-decoration: none;
+    width: 50px;
+    right: 37px;
+    position: absolute;
+    background-image: url('graphics/add.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+div.quiz {
+    height:100%;
+    display:block;
+    border:1px solid #999;
+    padding:0.25em;
+    text-decoration: none;
+    color:#444;
+    font-size:1em;
+    background:rgba(200,200,200,0.85);
+}
+div.question {
+    height:100%;
+    display:block;
+    border:1px solid #999;
+    padding:0.75em;
+    text-decoration: none;
+    color:#444;
+    font-size:1em;
+    background:rgba(235,235,235,0.85);
+}
+
+
+}
+#quizesView b,
 #videosView b,
 #defaultView b {
     height:100%;
@@ -287,37 +333,55 @@ body {
     font-size:1em;
     background:rgba(200,200,200,0.85);
 }
+
+#quizesView a:active,
+#videosView a:active,
 #defaultView a:active {
     background-color:#D9D900;
 }
 
-#defaultView #nearMe {
-    padding-left:75px;
-    background-image:url('graphics/map_marker.png');
-    background-position: 15px center;
-    background-repeat:no-repeat;
+#quizTitle{
+    text-align: center;
+    font-size: 1.3em;
+    width: 100%;
+    background:rgba(0,0,0,0);
+    border: hidden;
 }
 
+
+
+#quizDescription{
+    width: 100%;
+    background:rgba(0,0,0,0);
+    border: hidden;
+    font-size: 0.9em;
+}
+#quizDescriptionBlock{
+    height:100%;
+    display:block;
+    padding:0.25em;
+    text-decoration: none;
+    color:#444;
+    font-size:1.1em;
+    background:rgba(0,0,0,0);
+}
 #defaultView #quiz {
     padding-left:75px;
-    background-image:url('graphics/search.png');
+    background-image:url('graphics/takeQuiz.png');
     background-position: 5px center;
     background-repeat:no-repeat;
 }
 
 #defaultView #video {
     padding-left:75px;
-    background-image:url('graphics/info.png');
+    background-image:url('graphics/watchVideo.png');
     background-position: 10px center;
     background-repeat:no-repeat;
 }
 
-
-#findMarketsNearMeView {
-}
 #videosView .videoItem {
     padding-left:75px;
-    background-image:url('graphics/info.png');
+    background-image:url('graphics/video.png');
     background-position: 10px center;
     background-repeat:no-repeat;
 }
@@ -331,6 +395,10 @@ body {
 	
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
+}
+
+#createQuizView {
+    padding:1.25em;
 }
 
 #quizesView {
@@ -372,124 +440,9 @@ body {
     background-repeat:no-repeat;
 }
 
-#credit_cards {
-    background-image:url('graphics/credit_card.png');
-    background-position: 10px center;
-}
-
-#wic_accepted {
-    background-image:url('graphics/family.png');
-    background-position: 15px center;
-}
-
-#senior {
-    background-image:url('graphics/senior.png');
-    background-position: 24px center;
-}
-
-#snap {
-    background-image:url('graphics/snap.png');
-    background-position: 20px center;
-}
-
-#bakedgoods {
-    background-image:url('graphics/bread.png');
-    background-position: 10px center;
-}
-
-#cheese {
-    background-image:url('graphics/cheese.png');
-    background-position: 7px center;
-}
-
-#arts {
-    background-image:url('graphics/arts.png');
-    background-position: 12px center;
-}
-
-#flowers {
-    background-image:url('graphics/flower.png');
-    background-position: 15px center;
-}
-
-#seafood {
-    background-image:url('graphics/fish.png');
-    background-position: 7px center;
-}
-
-#fruit {
-    background-image:url('graphics/fruit.png');
-    background-position: 15px center;
-}
-
-#herbs {
-    background-image:url('graphics/herb.png');
-    background-position: 15px center;
-}
-
-#vegetables {
-    background-image:url('graphics/vegetables.png');
-    background-position: 16px center;
-}
-
-#honey {
-    background-image:url('graphics/honey.png');
-    background-position: 17px center;
-}
-
-#jams {
-    background-image:url('graphics/jams.png');
-    background-position: 17px center;
-}
-
-#maple {
-    background-image:url('graphics/maple.png');
-    background-position: 17px center;
-}
-
-#nuts {
-    background-image:url('graphics/nuts.png');
-    background-position: 15px center;
-}
-
-#meat {
-    background-image:url('graphics/meat.png');
-    background-position: 10px center;
-}
-
-#plants {
-    background-image:url('graphics/plants.png');
-    background-position: 18px center;
-}
-
-#prepared {
-    background-image:url('graphics/prepared.png');
-    background-position: 15px center;
-}
-
-#soap {
-    background-image:url('graphics/soap.png');
-    background-position: 10px center;
-}
-
-
-
-
-#marketMapView {
-    width:100%;
-    height:100%;
-    position:absolute;
-}
-
 #Choice {
     font-size:1.25em;
     width:100%;
-}
-
-
-#search_searchPhrase {
-    width:96%; 
-    font-size:1.25em;
 }
 
 #submitButton {
@@ -507,18 +460,6 @@ label {
     padding:.25em;
 }
 
-.checkboxChoice {
-    padding:.25em;
-}
-
 .checkboxChoice .amenities {
     font-size: 1em;
-}
-
-#geoError{
-    padding:1.25em;
-}
-#geoError div {
-    padding:1.25em;
-    padding-top:0px;
 }
