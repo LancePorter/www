@@ -1,10 +1,13 @@
 
 var templates = {
-    videosViewTemplate:"views/videosViewTemplate.html",
-    defaultViewTemplate:"views/defaultViewTemplate.html",
-    quizesViewTemplate:"views/quizesViewTemplate.html",
-    watchViewTemplate:"views/watchViewTemplate.html",
-    createQuizView:"views/createQuizViewTemplate.html",
+    videosViewTemplate : "views/videosViewTemplate.html",
+    defaultViewTemplate : "views/defaultViewTemplate.html",
+    quizesViewTemplate : "views/quizesViewTemplate.html",
+    watchViewTemplate : "views/watchViewTemplate.html",
+    createQuizView : "views/createQuizViewTemplate.html",
+    questionCheckBoxView : "views/questionCheckBoxViewTemplate.html",
+    questionRadioButtonView : "views/questionRadioButtonViewTemplate.html",
+    questionSelectorView : "views/questionSelectorViewTemplate.html",
     loaded: 0,
     requested: 0
 };
@@ -71,9 +74,29 @@ ViewAssembler.prototype.createQuizView = function() {
     el.find("#quizDescription").show(function(){
         $('#quizDescription').elastic();
     });
+    el.find("#addQuestionButton").on(this.CLICK_EVENT, function() {
+        onAddQuestionButtonClick($('#newQuestionType').val());
+    });
     return el;
 }
 
+ViewAssembler.prototype.newQuestion = function( questionType ) {
+
+    if (questionType == 'checkbox'){
+        var el = $( templates.questionCheckBoxView );
+    } else if (questionType == 'radioButton'){
+        var el = $( templates.questionRadioButtonView );
+    } else if (questionType == 'select'){
+        var el = $( templates.questionSelectorView );
+    } else if (questionType == 'text'){
+        var el = $( templates.questionCheckBoxView );
+    } else if (questionType == 'textarea'){
+        var el = $( templates.questionCheckBoxView );
+    } else {
+        var el = null;
+    }
+    return el;
+}
 
 ViewAssembler.prototype.defaultView = function() {
     var el = $( templates.defaultViewTemplate );

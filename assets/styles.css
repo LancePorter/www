@@ -129,7 +129,7 @@ body {
 }
 
 .viewNavigator_backButton:active {
-    background-color: #D9D900;
+    background-color:#FFFFFF;
 }
 
 .viewNavigator_content {
@@ -177,7 +177,7 @@ body {
 }
 
 .button:active {
-    background-color: #D9D900;
+    background-color:#FFFFFF;
 }
 
 .heading {
@@ -298,6 +298,16 @@ body {
     background-repeat: no-repeat;
 }
 
+#addNewVideo {
+    height:100%;
+    display:block;
+    border:1px solid #999;
+    padding:1.25em;
+    text-decoration: none;
+    color:#444;
+    font-size:1em;
+    background:rgba(230,230,230,0.85);
+}
 div.quiz {
     height:100%;
     display:block;
@@ -313,6 +323,7 @@ div.question {
     display:block;
     border:1px solid #999;
     padding:0.75em;
+    margin-top:0.25em;
     text-decoration: none;
     color:#444;
     font-size:1em;
@@ -337,7 +348,7 @@ div.question {
 #quizesView a:active,
 #videosView a:active,
 #defaultView a:active {
-    background-color:#D9D900;
+    background-color:#FFFFFF;
 }
 
 #quizTitle{
@@ -348,7 +359,12 @@ div.question {
     border: hidden;
 }
 
-
+.questionText{
+    width: 100%;
+    background:rgba(0,0,0,0);
+    border: hidden;
+    font-size: 1.1em;
+}
 
 #quizDescription{
     width: 100%;

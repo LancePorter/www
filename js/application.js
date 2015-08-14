@@ -103,6 +103,14 @@ function onAddVideoClick() {
     );
     return false;
 }
+function onAddQuestionButtonClick( questionType ){
+    alert(questionType);
+    var el = viewAssembler.newQuestion(questionType);
+    if (el){
+        $("#addQuestionDiv").before(el);
+    }
+    return false;
+}
 
 function onQuizesViewClick( event ) {
     var view = { title: "Quiz",
