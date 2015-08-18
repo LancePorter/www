@@ -88,11 +88,13 @@ ViewAssembler.prototype.newQuestion = function( questionType ) {
         var el = $( templates.questionCheckBoxView );
         el.find(".addNewChoiceDiv").on(this.CLICK_EVENT, function() {
             $(this).before($(templates.checkboxChoiceView));
+            viewNavigator.resetScroller();
         });
     } else if (questionType == 'radioButton'){
         var el = $( templates.questionRadioButtonView );
         el.find(".addNewChoiceDiv").on(this.CLICK_EVENT, function() {
             $(this).before($(templates.radioButtonChoiceView));
+            viewNavigator.resetScroller();
         });
     } else if (questionType == 'text'){
         var el = $( templates.questionTextView );

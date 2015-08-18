@@ -107,6 +107,7 @@ function onAddQuestionButtonClick( questionType ){
     var el = viewAssembler.newQuestion(questionType);
     if (el){
         $("#addQuestionDiv").before(el);
+        viewNavigator.resetScroller();
     }
     return false;
 }
