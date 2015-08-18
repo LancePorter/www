@@ -366,6 +366,55 @@ div.question {
     font-size: 1.1em;
 }
 
+#saveQuizButtonDiv{
+    left: 50%;
+    display:block;
+    border:1px solid #999;
+    padding:0.75em;
+    margin-top:0.25em;
+    text-decoration: none;
+    color:#444;
+    font-size:1em;
+    background:rgba(235,235,235,0.85);
+}
+
+.answerText {
+    width: 100%;
+    background: rgba(255,255,255,0.5);
+    border: dotted;
+    font-size: 1em;
+    border-width: 2px;
+}
+.choiceText{
+    width: 100%;
+    background:rgba(0,0,0,0);
+    border: hidden;
+    font-size: 1em;
+}
+
+.choiceInputDiv {
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+
+.choiceTextDiv{
+    float:right;
+    text-align:left;
+    width: calc(100% - 25px);
+}
+
+.addNewChoiceDiv {
+    padding-left:25px;
+    background-image:url('graphics/add.png');
+    background-position: left center;
+    background-repeat:no-repeat;
+    background-size: contain;
+    font-size: 1em;
+    margin-top: 1.3em;
+
+}
+
 #quizDescription{
     width: 100%;
     background:rgba(0,0,0,0);

@@ -7,7 +7,9 @@ var templates = {
     createQuizView : "views/createQuizViewTemplate.html",
     questionCheckBoxView : "views/questionCheckBoxViewTemplate.html",
     questionRadioButtonView : "views/questionRadioButtonViewTemplate.html",
-    questionSelectorView : "views/questionSelectorViewTemplate.html",
+    checkboxChoiceView: "views/checkboxChoiceViewTemplate.html",
+    radioButtonChoiceView: "views/radioButtonChoiceViewTemplate.html",
+    questionTextView: "views/questionTextViewTemplate.html",
     loaded: 0,
     requested: 0
 };
@@ -84,14 +86,16 @@ ViewAssembler.prototype.newQuestion = function( questionType ) {
 
     if (questionType == 'checkbox'){
         var el = $( templates.questionCheckBoxView );
+        el.find(".addNewChoiceDiv").on(this.CLICK_EVENT, function() {
+            $(this).before($(templates.checkboxChoiceView));
+        });
     } else if (questionType == 'radioButton'){
         var el = $( templates.questionRadioButtonView );
-    } else if (questionType == 'select'){
-        var el = $( templates.questionSelectorView );
+        el.find(".addNewChoiceDiv").on(this.CLICK_EVENT, function() {
+            $(this).before($(templates.radioButtonChoiceView));
+        });
     } else if (questionType == 'text'){
-        var el = $( templates.questionCheckBoxView );
-    } else if (questionType == 'textarea'){
-        var el = $( templates.questionCheckBoxView );
+        var el = $( templates.questionTextView );
     } else {
         var el = null;
     }
